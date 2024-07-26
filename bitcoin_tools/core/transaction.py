@@ -167,21 +167,19 @@ class TX:
             prev_tx_id = [prev_tx_id]
         if isinstance(prev_out_index, int):
             prev_out_index = [prev_out_index]
-        if isinstance(value, int):
-            value = [value]
         if isinstance(outputs, str) or (isinstance(outputs, list) and isinstance(outputs[0], int)):
             outputs = [outputs]
 
         # If fees have been set, subtract them from the final value. Otherwise, assume they have been already
         # subtracted when specifying the amounts.
-        if fees:
-            value[-1] -= fees
+        if fees > 0:
+            value -= fees
 
         if len(prev_tx_id) != len(prev_out_index):
             raise Exception("Previous transaction id and index number of elements must match. " + str(len(prev_tx_id))
                             + "!= " + str(len(prev_out_index)))
-        elif len(value) != len(outputs):
-            raise Exception("Each output must have set a Satoshi amount. Use 0 if no value is going to be transferred.")
+        #elif len(value) != len(outputs):
+        #    raise Exception("Each output must have set a Satoshi amount. Use 0 if no value is going to be transferred.")
 
         for o in outputs:
             # Multisig outputs are passes ad an integer m representing the m-of-n transaction, amb m public keys.
