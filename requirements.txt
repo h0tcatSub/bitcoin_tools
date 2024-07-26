@@ -5,5 +5,4 @@ qrcode
 Pillow
 plyvel
 matplotlib
-numpy
 ujson
