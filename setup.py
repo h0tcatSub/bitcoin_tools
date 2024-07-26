@@ -6,7 +6,7 @@ def requirements_from_file(file_name):
 
 setup(
     name='bitcoin_tools',
-    version='0.1.0.n0ri',
+    version='0.1.0',
     packages=find_packages(),
     install_requires=requirements_from_file('requirements.txt'),
 )
