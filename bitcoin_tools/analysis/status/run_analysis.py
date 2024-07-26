@@ -322,33 +322,33 @@ def run_experiment(coin, chainstate, count_p2sh, non_std_only):
     f_utxos, f_parsed_txs, f_parsed_utxos, f_dust = set_out_names(count_p2sh, non_std_only)
 
     # Parse all the data in the chainstate.
-    print "Parsing the chainstate."
+    "Parsing the chainstate."
     parse_ldb(f_utxos, fin_name=chainstate)
 
     # Parses transactions and utxos from the dumped data.
-    print "Adding meta-data for transactions and UTXOs."
+    "Adding meta-data for transactions and UTXOs."
     transaction_dump(f_utxos, f_parsed_txs)
     utxo_dump(f_utxos, f_parsed_utxos, coin, count_p2sh=count_p2sh, non_std_only=non_std_only)
 
-    # Print basic stats from data
-    print "Running overview analysis."
+    # basic stats from data
+    "Running overview analysis."
     overview_from_file(f_parsed_txs, f_parsed_utxos)
 
     # Generate plots from tx data (from f_parsed_txs)
-    print "Running transaction based analysis."
+    "Running transaction based analysis."
     tx_based_analysis(f_parsed_txs)
 
     # Generate plots from utxo data (from f_parsed_utxos)
-    print "Running UTXO based analysis."
+    "Running UTXO based analysis."
     utxo_based_analysis(f_parsed_utxos)
 
     # # Aggregates dust and generates plots.
-    print "Running dust analysis."
+    "Running dust analysis."
     dust_analysis(f_parsed_utxos, f_dust)
     dust_analysis_all_fees(f_parsed_utxos)
 
     # Generate plots with filters
-    print "Running analysis with filters."
+    "Running analysis with filters."
     utxo_based_analysis_with_filters(f_parsed_utxos)
     tx_based_analysis_with_filters(f_parsed_txs)
 

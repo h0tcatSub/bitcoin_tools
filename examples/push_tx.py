@@ -26,7 +26,7 @@ rpc_port = 18332
 # Test connection
 rpc_connection = AuthServiceProxy("http://%s:%s@%s:%s" % (rpc_user, rpc_password, rpc_server, rpc_port))
 get_info = rpc_connection.getinfo()
-print get_info
+get_info
 
 # Send transaction
 # raw_transaction = ...

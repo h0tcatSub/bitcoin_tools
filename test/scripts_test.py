@@ -14,31 +14,31 @@ sigs = [signature]
 pks = [pk, pk]
 
 
-print ("OUTPUT SCRIPTS")
+("OUTPUT SCRIPTS")
 
 o = OutputScript.P2PK(pk)
-print o.type, o.content
+o.type, o.content
 
 o = OutputScript.P2PKH(btc_addr)
-print o.type, o.content
+o.type, o.content
 
 o = OutputScript.P2MS(1, 2, pks)
-print o.type, o.content
+o.type, o.content
 
 o = OutputScript.P2SH(script_hash)
-print o.type, o.content
+o.type, o.content
 
-print ("\nINPUT SCRIPTS")
+("\nINPUT SCRIPTS")
 
 i = InputScript().P2PK(signature)
-print i.type, i.content
+i.type, i.content
 
 i = InputScript().P2PKH(signature, pk)
-print i.type, i.content
+i.type, i.content
 
 i = InputScript().P2MS(sigs)
-print i.type, i.content
+i.type, i.content
 
 i = InputScript().P2SH(data, script)
-print i.type, i.content
+i.type, i.content
 

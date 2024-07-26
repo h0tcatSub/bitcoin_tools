@@ -56,7 +56,7 @@ tx = TX.build_from_io(prev_tx_id, prev_out_index, value - fee, destination)
 tx.sign(sks[0], 0)
 
 # Once created we can display the serialized transaction. Transaction is now ready to be broadcast.
-print "hex: " + tx.serialize()
+"hex: " + tx.serialize()
 
 # Finally, we can analyze each field of the transaction.
 tx.display()
