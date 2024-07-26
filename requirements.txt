@@ -3,4 +3,5 @@ python-bitcoinlib
 base58
 qrcode
 Pillow
+plyvel
 ujson
